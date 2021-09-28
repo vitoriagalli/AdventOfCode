@@ -40,6 +40,8 @@ public abstract class AbstractDay {
     }
 
 
-    public void main() {};
+    public void part1() {};
+
+    public void part2() {};
 
 }

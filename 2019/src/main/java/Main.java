@@ -17,7 +17,7 @@ public class Main {
             {
                 AbstractDay day = dayClass.getDeclaredConstructor().newInstance();
                 day.readFileAndGetArgs();
-                day.main();
+                day.part1();
             }
 
         } catch (Exception e)
