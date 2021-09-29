@@ -22,6 +22,8 @@ public abstract class AbstractDay {
 
     public void readFileAndGetArgs() throws Exception {
 
+        System.out.println("--- DAY " + dayStr + " ---");
+
         try {
 
             File file = new File(filePath + dayStr);
@@ -40,7 +42,7 @@ public abstract class AbstractDay {
     }
 
 
-    public void part1() {};
+    public void part1() {}
 
     public void part2() {};
 

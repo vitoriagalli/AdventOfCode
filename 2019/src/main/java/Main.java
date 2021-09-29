@@ -1,5 +1,6 @@
 import days.AbstractDay;
 import days.Day01;
+import days.Day02;
 
 import java.util.ArrayList;
 
@@ -10,7 +11,8 @@ public class Main {
         try {
 
             ArrayList< Class<? extends AbstractDay> > listOfClasses = new ArrayList<>();
-            listOfClasses.add(Day01.class);
+//            listOfClasses.add(Day01.class);
+            listOfClasses.add(Day02.class);
 
 
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
@@ -18,6 +20,7 @@ public class Main {
                 AbstractDay day = dayClass.getDeclaredConstructor().newInstance();
                 day.readFileAndGetArgs();
                 day.part1();
+                day.part2();
             }
 
         } catch (Exception e)
