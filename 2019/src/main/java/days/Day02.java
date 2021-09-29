@@ -17,12 +17,9 @@ public class Day02 extends AbstractDay {
     public void part1() {
         System.out.println("Part1:");
         try {
-
-            intcodeList = parseInput();
+            this.intcodeList = parseInput();
             programAlarm();
             intcodeList.forEach(i -> System.out.print(i + ","));
-//            System.out.println("sum of elements = " + intcodeList.stream().collect(Collectors.summingInt(Integer::intValue)));
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -45,18 +42,27 @@ public class Day02 extends AbstractDay {
     }
 
 
-    void programAlarm() {
+    public void programAlarm() {
 
-        for (int i = 0; i < intcodeList.size(); i++) {
-            if ( intcodeList.get(i) == 99 )
-                return;
-            else if ( intcodeList.get(i) == 1 ) {
-                intcodeList.set(intcodeList.get(i+3), intcodeList.get(intcodeList.get(i+1)) + intcodeList.get(intcodeList.get(i+2)));
+        int i = 0;
+        while (i < intcodeList.size() && intcodeList.get(i) != 99) {
+            if ( intcodeList.get(i) == 1 ) {
+                intcodeList.set(intcodeList.get(i+3), intcodeList.get( intcodeList.get(i+1) ) + intcodeList.get( intcodeList.get(i+2)) );
             } else if ( intcodeList.get(i) == 2 ) {
-                intcodeList.set(intcodeList.get(i+3), intcodeList.get(intcodeList.get(i+1)) * intcodeList.get(intcodeList.get(i+2)));
+                intcodeList.set(intcodeList.get(i+3), intcodeList.get( intcodeList.get(i+1) ) * intcodeList.get( intcodeList.get(i+2)) );
+            } else {
+                return ;
             }
+            i += 4;
         }
 
     }
 
+    public void setIntcodeList(ArrayList<Integer> intcodeList) {
+        this.intcodeList = intcodeList;
+    }
+
+    public ArrayList<Integer> getIntcodeList() {
+        return intcodeList;
+    }
 }
