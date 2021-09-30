@@ -30,3 +30,6 @@ public class Main {
     }
 
 }
+
+
+//https://cal.se/day02/02.html
