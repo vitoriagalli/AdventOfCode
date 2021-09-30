@@ -16,7 +16,6 @@ public class Day01 extends AbstractDay {
         try {
             ArrayList<Integer> resultList = new ArrayList<>();
             argList.forEach(argStr -> resultList.add(calculateFuel(Integer.parseInt(argStr))));
-//            resultList.forEach(System.out::println);
             System.out.println("sum of the fuel requirements = " + resultList.stream().collect(Collectors.summingInt(Integer::intValue)));
 
         } catch (Exception e) {
@@ -38,11 +37,11 @@ public class Day01 extends AbstractDay {
         }
     }
 
-    int calculateFuel(int mass) {
+    public int calculateFuel(int mass) {
         return Math.floorDiv(mass, 3) - 2;
     }
 
-    int calculateRecursiveFuel(int mass) {
+    public int calculateRecursiveFuel(int mass) {
         int fuel = calculateFuel(mass);
         if (fuel <= 0)
             return 0;

@@ -11,8 +11,8 @@ public class Main {
         try {
 
             ArrayList< Class<? extends AbstractDay> > listOfClasses = new ArrayList<>();
-//            listOfClasses.add(Day01.class);
-            listOfClasses.add(Day02.class);
+            listOfClasses.add(Day01.class);
+//            listOfClasses.add(Day02.class);
 
 
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
