@@ -46,4 +46,11 @@ public abstract class AbstractDay {
 
     public void part2() {};
 
+    public ArrayList<String> getArgList() {
+        return argList;
+    }
+
+    public void setArgList(ArrayList<String> argList) {
+        this.argList = argList;
+    }
 }
