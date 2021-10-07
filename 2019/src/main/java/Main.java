@@ -1,7 +1,4 @@
-import days.AbstractDay;
-import days.Day01;
-import days.Day02;
-import days.Day03;
+import days.*;
 
 import java.util.ArrayList;
 
@@ -14,7 +11,8 @@ public class Main {
             ArrayList< Class<? extends AbstractDay> > listOfClasses = new ArrayList<>();
 //            listOfClasses.add(Day01.class);
 //            listOfClasses.add(Day02.class);
-            listOfClasses.add(Day03.class);
+//            listOfClasses.add(Day03.class);
+            listOfClasses.add(Day04.class);
 
 
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
