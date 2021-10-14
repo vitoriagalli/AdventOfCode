@@ -1,7 +1,11 @@
 package days;
 
 
+
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Day04 extends AbstractDay {
 
@@ -14,41 +18,46 @@ public class Day04 extends AbstractDay {
 
     @Override
     public void part1() {
+
         System.out.println("Part1:");
         getMinAndMaxValue();
+        System.out.println(solvePart1(min, max));
+    }
+
+
+    @Override
+    public void part2() {
+
+        System.out.println("Part2:");
+        System.out.println(solvePart2(min, max));
+
+    }
+
+    public int solvePart1(int min, int max) {
 
         int count = 0;
         for (int n = min; n < max; n++)
         {
             int[] digits = Integer.toString(n).chars().map(c -> c-'0').toArray();
             if (hasSameAdjacentValue(digits) && isCrescent(digits))
-            {
                 count ++;
-            }
 
         }
-        System.out.println(count);
-
+        return count;
     }
 
-
-    @Override
-    public void part2() {
-        System.out.println("Part2:");
+    public int solvePart2(int min, int max) {
 
         int count = 0;
         for (int n = min; n < max; n++)
         {
             int[] digits = Integer.toString(n).chars().map(c -> c-'0').toArray();
             if (hasSameAdjacentValueButNotBiggerGroup(digits) && isCrescent(digits))
-            {
-                System.out.println(n);
                 count ++;
-            }
-
         }
-        System.out.println(count);
+        return count;
     }
+
 
     private boolean hasSameAdjacentValueButNotBiggerGroup(int[] n) {
 
@@ -66,16 +75,13 @@ public class Day04 extends AbstractDay {
                     countValues++;
                     value[countValues] = n[i];
                 }
-
             }
 
-            if (count[getIndexOfLargest(value)] > 1)
-                return false;
-            return true;
+            if (ArrayUtils.indexOf(count, 1) > -1)
+                return true;
+            return false;
         }
-
         return false;
-
     }
 
     public int getIndexOfLargest( int[] array )
