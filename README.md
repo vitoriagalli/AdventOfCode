@@ -14,7 +14,7 @@ $ python3 main.py
 
 | Day |      Star     |   Code   |
 |:---:|:-------------:|:--------:|
-| [01 - Report Repair](https://adventofcode.com/2020/day/1) | :star: :star: | [:page_facing_up:](/day01/main.py)
+| [01 - Report Repair](https://adventofcode.com/2020/day/1) | :star: :star: | [:page_facing_up:](/2020/day01/main.py)
 | [02 - Password Philosophy](https://adventofcode.com/2020/day/2) | :star: :star: | [:page_facing_up:](/day02/main.py)
 | [03 - Toboggan Trajectory](https://adventofcode.com/2020/day/3) | :star: :star: | [:page_facing_up:](/day03/main.py)
 | [04 - Passport Processing](https://adventofcode.com/2020/day/4) | :star: :star: | [:page_facing_up:](/day04/main.py)
