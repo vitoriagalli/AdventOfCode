@@ -12,8 +12,9 @@ public class Main {
 //            listOfClasses.add(Day01.class);
 //            listOfClasses.add(Day02.class);
 //            listOfClasses.add(Day03.class);
-            listOfClasses.add(Day04.class);
-
+//            listOfClasses.add(Day04.class);
+//            listOfClasses.add(Day05.class);   // TODO
+            listOfClasses.add(Day06.class);
 
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
             {
