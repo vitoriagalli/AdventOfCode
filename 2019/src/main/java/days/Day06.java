@@ -15,48 +15,56 @@ public class Day06 extends AbstractDay {
         System.out.println(solvePart1());
     }
 
-
     @Override
     public void part2() {
-
         System.out.println("Part2:");
-//        System.out.println(solvePart2());
-
+        System.out.println(solvePart2());
     }
 
     public int solvePart1() {
 
         Map<String, List<String>> hashMap = createHashMap();
+        List<String> keyList = new ArrayList<String>();
 
         int sumOrbits = 0;
 
         for (List<String> list : hashMap.values()) {
             for (String value : list) {
-                sumOrbits += countOrbits(value, hashMap, 0);
+                sumOrbits += getKeyList(value, hashMap, keyList).size();
+                keyList.clear();
             }
         }
-
         return sumOrbits;
     }
 
-//    public int solvePart2() {
-//
-//
-//    }
+    public int solvePart2() {
 
-    int countOrbits(String value, Map<String, List<String>> hashMap, int n) {
+        Map<String, List<String>> hashMap = createHashMap();
+        List<String> keyListSanta = getKeyList("SAN", hashMap, new ArrayList<>());
+        List<String> keyListYou = getKeyList("YOU", hashMap, new ArrayList<>());
+        String firstCommonKey = "";
+
+        for (String key: keyListSanta) {
+            if (keyListYou.contains(key)) {
+                firstCommonKey = key;
+                break;
+            }
+        }
+        return (keyListSanta.indexOf(firstCommonKey) + keyListYou.indexOf(firstCommonKey));
+    }
+
+    List<String> getKeyList(String value, Map<String, List<String>> hashMap, List<String> list) {
 
         for (String key : hashMap.keySet()) {
             for (String valueToCompare : hashMap.get(key)) {
                 if (valueToCompare.equals(value)) {
-                    return(countOrbits(key, hashMap, n + 1));
+                    list.add(key);
+                    return(getKeyList(key, hashMap, list));
                 }
             }
         }
-        return n;
+        return list;
     }
-
-
 
 
     public Map<String, List<String>> createHashMap() {
@@ -81,38 +89,4 @@ public class Day06 extends AbstractDay {
         return hashMap;
     }
 
-
-
 }
-
-//chave, lista de valores
-//
-//COM:B
-//B:C, G
-//C:D
-//D:E, I
-//E:F, J
-//H:G
-//J:K
-//K:L
-//
-//
-//
-//                  I
-// COM  B   C   D   E   F
-//                      J   K   L
-//          G   H
-//
-//
-// COM 0
-// B 1
-// C 2
-// D 3
-// E 4
-// F 5
-// G 2
-// H 3
-// I 4
-// J 5
-// K 6
-// L 7
