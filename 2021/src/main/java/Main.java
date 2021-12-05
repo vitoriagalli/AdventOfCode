@@ -1,6 +1,7 @@
 import days.*;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main {
 
@@ -9,16 +10,13 @@ public class Main {
         try {
 
             ArrayList< Class<? extends AbstractDay> > listOfClasses = new ArrayList<>();
-//            listOfClasses.add(Day01.class);
-//            listOfClasses.add(Day02.class);
-//            listOfClasses.add(Day03.class);
-//            listOfClasses.add(Day04.class);
-//            listOfClasses.add(Day05.class);   // TODO
-//            listOfClasses.add(Day06.class);
-//            listOfClasses.add(Day07.class);   // TODO
-//            listOfClasses.add(Day08.class);
-//            listOfClasses.add(Day09.class);   // TODO
-            listOfClasses.add(Day10.class);
+
+            for (String arg : args) {
+                try {
+                    Class c = Class.forName("days." + arg.toUpperCase().charAt(0) + arg.toLowerCase().substring(1));
+                    listOfClasses.add(c);
+                } catch (Exception e) { System.out.println("Error: " + e.getMessage() + " Class did not exist"); }
+            }
 
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
             {
@@ -28,13 +26,7 @@ public class Main {
                 day.part2();
             }
 
-        } catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+        } catch (Exception e) { System.out.println(e.getMessage()); }
     }
 
 }
-
-
-//https://cal.se/day02/02.html

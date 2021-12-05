@@ -1,9 +1,6 @@
 package days;
 
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-
 public class Day01 extends AbstractDay {
 
     public Day01() {
@@ -13,38 +10,35 @@ public class Day01 extends AbstractDay {
     @Override
     public void part1() {
         System.out.println("Part1:");
-        try {
-            ArrayList<Integer> resultList = new ArrayList<>();
-            argList.forEach(argStr -> resultList.add(calculateFuel(Integer.parseInt(argStr))));
-            System.out.println("sum of the fuel requirements = " + resultList.stream().collect(Collectors.summingInt(Integer::intValue)));
+        System.out.println(solvePart1());
+    }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    public int solvePart1() {
+        return compareWith(1);
     }
 
     @Override
     public void part2() {
         System.out.println("Part2:");
-        try {
-            ArrayList<Integer> resultList = new ArrayList<>();
-            argList.forEach(argStr -> resultList.add(calculateRecursiveFuel(Integer.parseInt(argStr))));
-//            resultList.forEach(System.out::println);
-            System.out.println("sum of the fuel requirements = " + resultList.stream().collect(Collectors.summingInt(Integer::intValue)));
+        System.out.println(solvePart2());
+    }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public int solvePart2() {
+        return compareWith(3);
+    }
+
+    public int compareWith(int indexIncr) {
+
+        int count = 0;
+        for (int i = 0; i < argList.size(); i++) {
+            try {
+                if (Integer.parseInt(argList.get(i))
+                        < Integer.parseInt(argList.get(i + indexIncr))) {
+                    count++;
+                }
+            } catch (Exception e) {}
         }
+        return count;
     }
 
-    public int calculateFuel(int mass) {
-        return Math.floorDiv(mass, 3) - 2;
-    }
-
-    public int calculateRecursiveFuel(int mass) {
-        int fuel = calculateFuel(mass);
-        if (fuel <= 0)
-            return 0;
-        return (fuel + calculateRecursiveFuel(fuel));
-    }
 }
