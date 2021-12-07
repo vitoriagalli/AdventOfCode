@@ -52,13 +52,16 @@ public class Day03 extends AbstractDay {
 
     private int getRating(ArrayList<String> list, String element) {
 
-        int nBits = list.get(0).length();
-        for (int i = 0; i < nBits; i++) {
+        int ones = 0;
+        int i = 0;
+
+        while (list.size() > 1) {
 
             int finalI = i;
-            int ones = list.stream().mapToInt(line -> Integer.parseInt(String.valueOf(line.charAt(finalI)))).sum();
+            ones = list.stream().mapToInt(line -> Integer.parseInt(String.valueOf(line.charAt(finalI)))).sum();
 
             int halfList = (int) (Math.ceil((double)(list.size())/(double)(2)));
+
             if ((element.equals("oxigen") && ones >= halfList)
                 || (element.equals("carbonDioxide") && ones < halfList)) {
                 list.removeIf(x -> x.charAt(finalI) == '0');
@@ -66,8 +69,7 @@ public class Day03 extends AbstractDay {
                 list.removeIf(x -> x.charAt(finalI) == '1');
             }
 
-            if (list.size() == 1)
-                break;
+            i++;
         }
         return Integer.parseInt(list.get(0), 2);
     }
