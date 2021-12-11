@@ -50,7 +50,7 @@ public class Day03 extends AbstractDay {
         return o2Generator * c02Scrubber;
     }
 
-    private int getRating(ArrayList<String> list, String element) {
+    static private int getRating(ArrayList<String> list, String element) {
 
         int ones = 0;
         int i = 0;
