@@ -30,7 +30,8 @@ public class Day05Test {
     @Test
     public void part02_Test() {
         // then
-        Assert.assertEquals(-1, dayObj.solvePart2());
+        dayObj.part1();
+        Assert.assertEquals(12, dayObj.solvePart2());
     }
 
 }
