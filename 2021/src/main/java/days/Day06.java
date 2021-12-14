@@ -5,7 +5,7 @@ import java.util.stream.LongStream;
 
 public class Day06 extends AbstractDay {
 
-    private long[] lanternFishAtDay = new long[10];
+    private long[] lanternFishAtDay = new long[9];
 
     public Day06() {
         super("06");
@@ -49,7 +49,7 @@ public class Day06 extends AbstractDay {
             lanternFishAtDay[5] = lanternFishAtDay[6];
             lanternFishAtDay[6] = lanternFishAtDay[7];
             lanternFishAtDay[7] = lanternFishAtDay[8];
-            lanternFishAtDay[8] = lanternFishAtDay[9];
+            lanternFishAtDay[8] = 0;
             lanternFishAtDay[6] += tmp;
             lanternFishAtDay[8] += tmp;
         }
