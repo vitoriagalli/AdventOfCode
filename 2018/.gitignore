@@ -12,3 +12,6 @@ pom.xml.asc
 .hgignore
 .hg/
 .idea
+*.iml
+.clj-kondo/
+.lsp/
