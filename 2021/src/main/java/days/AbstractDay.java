@@ -20,13 +20,13 @@ public abstract class AbstractDay {
         this.argList = new ArrayList<>();
     }
 
-    public void readFileAndGetArgs() throws Exception {
+    public void readFileAndGetArgs(String filePath) throws Exception {
 
         System.out.println("--- DAY " + dayStr + " ---");
 
         try {
 
-            File file = new File(filePath + dayStr);
+            File file = new File(filePath + dayStr + ".txt");
             BufferedReader br = new BufferedReader(new FileReader(file));
 
             String line;

@@ -1,7 +1,6 @@
 import days.*;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Main {
 
@@ -10,6 +9,7 @@ public class Main {
         try {
 
             ArrayList< Class<? extends AbstractDay> > listOfClasses = new ArrayList<>();
+            String filePath = getFilePath();
 
             for (String arg : args) {
                 try {
@@ -21,12 +21,26 @@ public class Main {
             for(Class<? extends AbstractDay> dayClass : listOfClasses)
             {
                 AbstractDay day = dayClass.getDeclaredConstructor().newInstance();
-                day.readFileAndGetArgs();
+                day.readFileAndGetArgs(filePath);
                 day.part1();
                 day.part2();
             }
 
         } catch (Exception e) { System.out.println(e.getMessage()); }
+    }
+
+    private static String getOperatingSystem() {
+        String os = System.getProperty("os.name");
+        return os;
+    }
+
+    private static String getFilePath() {
+
+        if (getOperatingSystem().contains("Mac OS")) {
+            return ".//args//day";
+        } else {
+            return ".\\args\\day";
+        }
     }
 
 }
