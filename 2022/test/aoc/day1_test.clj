@@ -1,7 +1,6 @@
 (ns aoc.day1-test
-  (:require
-   [aoc.day1 :as day01]
-   [clojure.test :refer :all]))
+  (:require [aoc.day1 :as day01]
+            [clojure.test :refer :all]))
 
 (def input ["1000"
             "2000"

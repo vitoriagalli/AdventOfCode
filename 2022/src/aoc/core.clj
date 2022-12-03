@@ -1,11 +1,13 @@
 (ns aoc.core
   (:require [aoc.day1 :as day1]
             [aoc.day2 :as day2]
+            [aoc.day3 :as day3]
             [clojure.string :as str]))
 
 (def fn-days [0
               day1/solver
-              day2/solver])
+              day2/solver
+              day3/solver])
 
 (defn read-file
   [day]
