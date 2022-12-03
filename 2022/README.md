@@ -1,4 +1,4 @@
-# Advent Of Code 2020 :christmas_tree::santa::gift:
+# Advent Of Code 2022 :christmas_tree::santa::gift:
 
 This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.com/2022) in clojure.
 
