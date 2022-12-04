@@ -9,7 +9,7 @@ This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.c
 | [01](https://adventofcode.com/2022/day/1)  | :star: :star: | [:page_facing_up:](src/aoc/day1.clj)  | [:white_check_mark:](test/aoc/day1_test.clj)  |
 | [02](https://adventofcode.com/2022/day/2)  | :star: :star: | [:page_facing_up:](src/aoc/day2.clj)  | [:white_check_mark:](test/aoc/day2_test.clj)  |
 | [03](https://adventofcode.com/2022/day/3)  | :star: :star: | [:page_facing_up:](src/aoc/day3.clj)  | [:white_check_mark:](test/aoc/day3_test.clj)  |
-| [04](https://adventofcode.com/2022/day/4)  |               | [:page_facing_up:](src/aoc/day4.clj)  | [:white_check_mark:](test/aoc/day4_test.clj)  |
+| [04](https://adventofcode.com/2022/day/4)  | :star: :star: | [:page_facing_up:](src/aoc/day4.clj)  | [:white_check_mark:](test/aoc/day4_test.clj)  |
 | [05](https://adventofcode.com/2022/day/5)  |               | [:page_facing_up:](src/aoc/day5.clj)  | [:white_check_mark:](test/aoc/day5_test.clj)  |
 | [06](https://adventofcode.com/2022/day/6)  |               | [:page_facing_up:](src/aoc/day6.clj)  | [:white_check_mark:](test/aoc/day6_test.clj)  |
 | [07](https://adventofcode.com/2022/day/7)  |               | [:page_facing_up:](src/aoc/day7.clj)  | [:white_check_mark:](test/aoc/day7_test.clj)  |

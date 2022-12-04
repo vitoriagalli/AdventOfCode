@@ -36,7 +36,7 @@
            :scissors :paper
            :rock     :scissors}})
 
-(defn parse-key
+(defn parsed-key
   [line]
   (let [vec (clojure.string/split line #" ")]
     {:opponent (first vec)
@@ -75,12 +75,12 @@
 
 (defn part01
   [input]
-  (let [output-keys-list (mapv parse-key input)]
+  (let [output-keys-list (mapv parsed-key input)]
     (transduce (map #(match-score-by-move %)) + output-keys-list)))
 
 (defn part02
   [input]
-  (let [output-keys-list (mapv parse-key input)]
+  (let [output-keys-list (mapv parsed-key input)]
     (transduce (map #(match-score-by-outcome %)) + output-keys-list)))
 
 (def solver
