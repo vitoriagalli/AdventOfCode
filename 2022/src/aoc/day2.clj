@@ -49,14 +49,6 @@
         :when (= opponent-move possible-opponent-move)]
     (key possible-outcome)))
 
-(defn match-score-1
-  [line]
-  (let [opponent-move (-> line :opponent opponent-move-map)
-        my-move       (-> line :me my-move-map)
-        my-outcome    (first (match-outcome opponent-move my-move))]
-    (+ (my-outcome match-points)
-       (my-move shape-points))))
-
 (defn match-move
   [opponent-move my-outcome]
   (let [possible-outcomes (my-outcome my-outcomes-map)
@@ -65,10 +57,18 @@
           :when (= opponent-move (key possible-outcomes))]
       key)))
 
-(defn match-score-2
-  [line]
-  (let [opponent-move (-> line :opponent opponent-move-map)
-        my-outcome    (-> line :me my-needed-outcome-map)
+(defn match-score-by-move
+  [match]
+  (let [opponent-move (-> match :opponent opponent-move-map)
+        my-move       (-> match :me my-move-map)
+        my-outcome    (first (match-outcome opponent-move my-move))]
+    (+ (my-outcome match-points)
+       (my-move shape-points))))
+
+(defn match-score-by-outcome
+  [match]
+  (let [opponent-move (-> match :opponent opponent-move-map)
+        my-outcome    (-> match :me my-needed-outcome-map)
         my-move       (first (match-move opponent-move my-outcome))]
     (+ (my-outcome match-points)
        (my-move shape-points))))
@@ -76,12 +76,12 @@
 (defn part01
   [input]
   (let [output-keys-list (mapv parse-key input)]
-    (transduce (map #(match-score-1 %)) + output-keys-list)))
+    (transduce (map #(match-score-by-move %)) + output-keys-list)))
 
 (defn part02
   [input]
   (let [output-keys-list (mapv parse-key input)]
-    (transduce (map #(match-score-2 %)) + output-keys-list)))
+    (transduce (map #(match-score-by-outcome %)) + output-keys-list)))
 
 (def solver
   {:day 2
