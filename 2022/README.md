@@ -4,7 +4,7 @@ This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.c
 
 ### Index
 
-|                    Day                     |     Star      |               Src Code                |                     Test                      |
+|                    Day                     |     Star      |                 Code                  |                     Test                      |
 |:------------------------------------------:|:-------------:|:-------------------------------------:|:---------------------------------------------:|
 | [01](https://adventofcode.com/2022/day/1)  | :star: :star: | [:page_facing_up:](src/aoc/day1.clj)  | [:white_check_mark:](test/aoc/day1_test.clj)  |
 | [02](https://adventofcode.com/2022/day/2)  | :star: :star: | [:page_facing_up:](src/aoc/day2.clj)  | [:white_check_mark:](test/aoc/day2_test.clj)  |

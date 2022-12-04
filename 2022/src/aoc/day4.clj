@@ -22,8 +22,7 @@
            (< yn x0))))
 
 (defn count-ranges-of-condition
-  [fn-condition
-   input]
+  [fn-condition input]
   (let [sections-limits (map #(parsed-line %) input)]
     (->> sections-limits
          (map #(fn-condition %))

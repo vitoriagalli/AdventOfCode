@@ -73,15 +73,18 @@
     (+ (my-outcome match-points)
        (my-move shape-points))))
 
+(defn total-score
+  [fn-condition input]
+  (let [output-keys-list (mapv parsed-key input)]
+    (transduce (map #(fn-condition %)) + output-keys-list)))
+
 (defn part01
   [input]
-  (let [output-keys-list (mapv parsed-key input)]
-    (transduce (map #(match-score-by-move %)) + output-keys-list)))
+  (total-score match-score-by-move input))
 
 (defn part02
   [input]
-  (let [output-keys-list (mapv parsed-key input)]
-    (transduce (map #(match-score-by-outcome %)) + output-keys-list)))
+  (total-score match-score-by-outcome input))
 
 (def solver
   {:day 2

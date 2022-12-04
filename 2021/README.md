@@ -4,7 +4,7 @@ This repo contains my solutions to [Advent of Code, 2021](https://adventofcode.c
 
 ### Index
 
-|                    Day                     |     Star      |                     Src Code                      |                        Test                        |
+|                    Day                     |     Star      |                       Code                        |                        Test                        |
 |:------------------------------------------:|:-------------:|:-------------------------------------------------:|:--------------------------------------------------:|
 | [01](https://adventofcode.com/2021/day/1)  | :star: :star: | [:page_facing_up:](src/main/java/days/Day01.java) | [:white_check_mark:](src/test/java/Day01Test.java) |
 | [02](https://adventofcode.com/2021/day/2)  | :star: :star: | [:page_facing_up:](src/main/java/days/Day02.java) | [:white_check_mark:](src/test/java/Day02Test.java) |
