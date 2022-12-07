@@ -26,7 +26,7 @@
   (let [indexes-line (last stack-lines)
         indexes      (->> indexes-line
                           seq
-                          (mapv #(when (not (= % \space)) (str/index-of indexes-line %)))
+                          (map #(when (not (= % \space)) (str/index-of indexes-line %)))
                           (keep identity))
         stacks-lines (->> stack-lines reverse rest)]
     (reduce (partial organize-stacks indexes) {} stacks-lines)))
@@ -38,7 +38,7 @@
      :from (keyword from)
      :to   (keyword to)}))
 
-(defn move-crater
+(defn move-single-crater
   [{:keys [from to]} stacks _]
   (let [next-in-stack (peek (from stacks))]
     (if (some? next-in-stack)
@@ -47,8 +47,8 @@
       stacks)))
 
 (defn one-at-a-time
-  [stacks {n :n :as instruction}]
-  (reduce (partial move-crater instruction) stacks (range n)))
+  [stacks {:keys [n] :as instruction}]
+  (reduce (partial move-single-crater instruction) stacks (range n)))
 
 (defn by-block
   [stacks {:keys [n from to]}]

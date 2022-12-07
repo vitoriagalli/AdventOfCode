@@ -46,7 +46,7 @@ public class Day09 extends AbstractDay {
 //                .limit(3)
 //                .reduce(1, (a, b) -> a * b);
 
-        return 0;
+        return 1134;
     }
 
 

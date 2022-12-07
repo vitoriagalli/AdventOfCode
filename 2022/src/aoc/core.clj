@@ -4,6 +4,7 @@
             [aoc.day3 :as day3]
             [aoc.day4 :as day4]
             [aoc.day5 :as day5]
+            [aoc.day6 :as day6]
             [clojure.string :as str]))
 
 (def fn-days [0
@@ -11,7 +12,8 @@
               day2/solver
               day3/solver
               day4/solver
-              day5/solver])
+              day5/solver
+              day6/solver])
 
 (defn read-file
   [day]
@@ -46,3 +48,10 @@
   (let [days-to-solve (get-days-to-solve args)]
     (doseq [day days-to-solve]
       (solve-day (get fn-days day)))))
+
+
+
+;
+; TODO arrumar todos os readmes
+;      colocando links e nome dos exercícios
+;
