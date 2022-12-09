@@ -33,5 +33,5 @@
 
 (deftest part2
   (testing "part02"
-    (is (= 0
+    (is (= 24933642
            (day07/part02 input)))))
