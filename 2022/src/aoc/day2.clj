@@ -1,4 +1,5 @@
-(ns aoc.day2)
+(ns aoc.day2
+  (:require [clojure.string :as str]))
 
 (def shape-points
   {:rock     1
@@ -38,7 +39,7 @@
 
 (defn parsed-key
   [line]
-  (let [vec (clojure.string/split line #" ")]
+  (let [vec (str/split line #" ")]
     {:opponent (first vec)
      :me       (last vec)}))
 

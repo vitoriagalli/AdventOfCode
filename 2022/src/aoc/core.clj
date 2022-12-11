@@ -6,6 +6,7 @@
             [aoc.day5 :as day5]
             [aoc.day6 :as day6]
             [aoc.day7 :as day7]
+            [aoc.day8 :as day8]
             [clojure.string :as str]))
 
 (def fn-days [0
@@ -15,7 +16,8 @@
               day4/solver
               day5/solver
               day6/solver
-              day7/solver])
+              day7/solver
+              day8/solver])
 
 (defn read-file
   [day]
