@@ -15,13 +15,13 @@ This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.c
 | [07 - No Space Left On Device](https://adventofcode.com/2022/day/7) | :star: :star: | [:page_facing_up:](src/aoc/day7.clj)  | [:white_check_mark:](test/aoc/day7_test.clj)  |
 |   [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)    | :star: :star: | [:page_facing_up:](src/aoc/day8.clj)  | [:white_check_mark:](test/aoc/day8_test.clj)  |
 |       [09 - Rope Bridge](https://adventofcode.com/2022/day/9)       |               | [:page_facing_up:](src/aoc/day9.clj)  | [:white_check_mark:](test/aoc/day9_test.clj)  |
-|            [10 - ](https://adventofcode.com/2022/day/10)            |               | [:page_facing_up:](src/aoc/day10.clj) | [:white_check_mark:](test/aoc/day10_test.clj) |
-|            [11 - ](https://adventofcode.com/2022/day/11)            |               | [:page_facing_up:](src/aoc/day11.clj) | [:white_check_mark:](test/aoc/day11_test.clj) |
-|            [12 - ](https://adventofcode.com/2022/day/12)            |               | [:page_facing_up:](src/aoc/day12.clj) | [:white_check_mark:](test/aoc/day12_test.clj) |
-|            [13 - ](https://adventofcode.com/2022/day/13)            |               | [:page_facing_up:](src/aoc/day13.clj) | [:white_check_mark:](test/aoc/day13_test.clj) |
-|            [14 - ](https://adventofcode.com/2022/day/14)            |               | [:page_facing_up:](src/aoc/day14.clj) | [:white_check_mark:](test/aoc/day14_test.clj) |
-|            [15 - ](https://adventofcode.com/2022/day/15)            |               | [:page_facing_up:](src/aoc/day15.clj) | [:white_check_mark:](test/aoc/day15_test.clj) |
-|            [16 - ](https://adventofcode.com/2022/day/16)            |               | [:page_facing_up:](src/aoc/day16.clj) | [:white_check_mark:](test/aoc/day16_test.clj) |
+|    [10 - Cathode-Ray Tube](https://adventofcode.com/2022/day/10)    |               | [:page_facing_up:](src/aoc/day10.clj) | [:white_check_mark:](test/aoc/day10_test.clj) |
+|  [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)  |               | [:page_facing_up:](src/aoc/day11.clj) | [:white_check_mark:](test/aoc/day11_test.clj) |
+| [12 -Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) |               | [:page_facing_up:](src/aoc/day12.clj) | [:white_check_mark:](test/aoc/day12_test.clj) |
+|    [13 - Distress Signal](https://adventofcode.com/2022/day/13)     |               | [:page_facing_up:](src/aoc/day13.clj) | [:white_check_mark:](test/aoc/day13_test.clj) |
+|   [14 - Regolith Reservoir](https://adventofcode.com/2022/day/14)   |               | [:page_facing_up:](src/aoc/day14.clj) | [:white_check_mark:](test/aoc/day14_test.clj) |
+| [15 - Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)  |               | [:page_facing_up:](src/aoc/day15.clj) | [:white_check_mark:](test/aoc/day15_test.clj) |
+| [16 - Proboscidea Volcanium](https://adventofcode.com/2022/day/16)  |               | [:page_facing_up:](src/aoc/day16.clj) | [:white_check_mark:](test/aoc/day16_test.clj) |
 |            [17 - ](https://adventofcode.com/2022/day/17)            |               | [:page_facing_up:](src/aoc/day17.clj) | [:white_check_mark:](test/aoc/day17_test.clj) |
 |            [18 - ](https://adventofcode.com/2022/day/18)            |               | [:page_facing_up:](src/aoc/day18.clj) | [:white_check_mark:](test/aoc/day18_test.clj) |
 |            [19 - ](https://adventofcode.com/2022/day/19)            |               | [:page_facing_up:](src/aoc/day19.clj) | [:white_check_mark:](test/aoc/day19_test.clj) |
