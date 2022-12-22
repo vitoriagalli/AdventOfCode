@@ -23,17 +23,26 @@
   (some #(> % knots) [(abs (- x-head x-tail))
                       (abs (- y-head y-tail))]))
 
+(defn tail-updated
+  [[x-head y-head]
+   [x-tail y-tail]]
+  (let [delta-x (- x-head x-tail)
+        delta-y (- y-head y-tail)
+        dir-x   (if (zero? delta-x) 0 (/ delta-x (abs delta-x)))
+        dir-y   (if (zero? delta-y) 0 (/ delta-y (abs delta-y)))]
+    [(+ x-tail dir-x) (+ y-tail dir-y)]))
+
 (defn inc-rope-move
   [knots
    {[x-head y-head] :head
     tails           :tails}
    [xm ym]]
-  (let [[x-up y-up :as head-updated] [(+ x-head xm) (+ y-head ym)]]
+  (let [head-updated [(+ x-head xm) (+ y-head ym)]
+        tail         (last tails)]
     {:head  head-updated
-     :tails (if (move-rope? head-updated (last tails) knots)
-              (conj tails [(- x-up xm) (- y-up ym)])
+     :tails (if (move-rope? head-updated tail knots)
+              (conj tails (tail-updated head-updated tail))
               tails)}))
-
 
 (defn move-rope-to-direction
   [knots state move-list]
@@ -46,10 +55,8 @@
     (->> moves
          (reduce (partial move-rope-to-direction knots) initial-state)
          :tails
-         println
          distinct
          count)))
-
 
 (defn part01
   [input]
