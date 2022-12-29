@@ -1,4 +1,4 @@
-(ns aoc.day1)
+(ns aoc.day01)
 
 (defn sum-on-last-element
   [collection number]

@@ -1,4 +1,4 @@
-(ns aoc.day5
+(ns aoc.day05
   (:require [clojure.string :as str]))
 
 (def regex #"move (\d+) from (\d+) to (\d+)")

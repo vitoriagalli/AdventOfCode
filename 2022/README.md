@@ -6,15 +6,15 @@ This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.c
 
 |                                 Day                                 |     Star      |                 Code                  |                     Test                      |
 |:-------------------------------------------------------------------:|:-------------:|:-------------------------------------:|:---------------------------------------------:|
-|    [01 - Calorie Counting](https://adventofcode.com/2022/day/1)     | :star: :star: | [:page_facing_up:](src/aoc/day1.clj)  | [:white_check_mark:](test/aoc/day1_test.clj)  |
-|   [02 - Rock Paper Scissors](https://adventofcode.com/2022/day/2)   | :star: :star: | [:page_facing_up:](src/aoc/day2.clj)  | [:white_check_mark:](test/aoc/day2_test.clj)  |
-| [03 - Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :star: :star: | [:page_facing_up:](src/aoc/day3.clj)  | [:white_check_mark:](test/aoc/day3_test.clj)  |
-|      [04 - Camp Cleanup](https://adventofcode.com/2022/day/4)       | :star: :star: | [:page_facing_up:](src/aoc/day4.clj)  | [:white_check_mark:](test/aoc/day4_test.clj)  |
-|      [05 - Supply Stacks](https://adventofcode.com/2022/day/5)      | :star: :star: | [:page_facing_up:](src/aoc/day5.clj)  | [:white_check_mark:](test/aoc/day5_test.clj)  |
-|     [06 - Tuning Trouble](https://adventofcode.com/2022/day/6)      | :star: :star: | [:page_facing_up:](src/aoc/day6.clj)  | [:white_check_mark:](test/aoc/day6_test.clj)  |
-| [07 - No Space Left On Device](https://adventofcode.com/2022/day/7) | :star: :star: | [:page_facing_up:](src/aoc/day7.clj)  | [:white_check_mark:](test/aoc/day7_test.clj)  |
-|   [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)    | :star: :star: | [:page_facing_up:](src/aoc/day8.clj)  | [:white_check_mark:](test/aoc/day8_test.clj)  |
-|       [09 - Rope Bridge](https://adventofcode.com/2022/day/9)       |    :star:     | [:page_facing_up:](src/aoc/day9.clj)  | [:white_check_mark:](test/aoc/day9_test.clj)  |
+|    [01 - Calorie Counting](https://adventofcode.com/2022/day/1)     | :star: :star: | [:page_facing_up:](src/aoc/day01.clj)  | [:white_check_mark:](test/aoc/day1_test.clj)  |
+|   [02 - Rock Paper Scissors](https://adventofcode.com/2022/day/2)   | :star: :star: | [:page_facing_up:](src/aoc/day02.clj)  | [:white_check_mark:](test/aoc/day2_test.clj)  |
+| [03 - Rucksack Reorganization](https://adventofcode.com/2022/day/3) | :star: :star: | [:page_facing_up:](src/aoc/day03.clj)  | [:white_check_mark:](test/aoc/day3_test.clj)  |
+|      [04 - Camp Cleanup](https://adventofcode.com/2022/day/4)       | :star: :star: | [:page_facing_up:](src/aoc/day04.clj)  | [:white_check_mark:](test/aoc/day4_test.clj)  |
+|      [05 - Supply Stacks](https://adventofcode.com/2022/day/5)      | :star: :star: | [:page_facing_up:](src/aoc/day05.clj)  | [:white_check_mark:](test/aoc/day5_test.clj)  |
+|     [06 - Tuning Trouble](https://adventofcode.com/2022/day/6)      | :star: :star: | [:page_facing_up:](src/aoc/day06.clj)  | [:white_check_mark:](test/aoc/day6_test.clj)  |
+| [07 - No Space Left On Device](https://adventofcode.com/2022/day/7) | :star: :star: | [:page_facing_up:](src/aoc/day07.clj)  | [:white_check_mark:](test/aoc/day7_test.clj)  |
+|   [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)    | :star: :star: | [:page_facing_up:](src/aoc/day08.clj)  | [:white_check_mark:](test/aoc/day8_test.clj)  |
+|       [09 - Rope Bridge](https://adventofcode.com/2022/day/9)       |    :star:     | [:page_facing_up:](src/aoc/day09.clj)  | [:white_check_mark:](test/aoc/day9_test.clj)  |
 |    [10 - Cathode-Ray Tube](https://adventofcode.com/2022/day/10)    | :star: :star: | [:page_facing_up:](src/aoc/day10.clj) | [:white_check_mark:](test/aoc/day10_test.clj) |
 |  [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)  |               | [:page_facing_up:](src/aoc/day11.clj) | [:white_check_mark:](test/aoc/day11_test.clj) |
 | [12 -Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) |               | [:page_facing_up:](src/aoc/day12.clj) | [:white_check_mark:](test/aoc/day12_test.clj) |

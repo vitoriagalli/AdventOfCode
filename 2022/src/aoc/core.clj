@@ -1,13 +1,13 @@
 (ns aoc.core
-  (:require [aoc.day1 :as day1]
-            [aoc.day2 :as day2]
-            [aoc.day3 :as day3]
-            [aoc.day4 :as day4]
-            [aoc.day5 :as day5]
-            [aoc.day6 :as day6]
-            [aoc.day7 :as day7]
-            [aoc.day8 :as day8]
-            [aoc.day9 :as day9]
+  (:require [aoc.day01 :as day1]
+            [aoc.day02 :as day2]
+            [aoc.day03 :as day3]
+            [aoc.day04 :as day4]
+            [aoc.day05 :as day5]
+            [aoc.day06 :as day6]
+            [aoc.day07 :as day7]
+            [aoc.day08 :as day8]
+            [aoc.day09 :as day9]
             [aoc.day10 :as day10]
             [clojure.string :as str]))
 

@@ -1,4 +1,4 @@
-(ns aoc.day6)
+(ns aoc.day06)
 
 (defn repeated-char?
   [groups-of processed-chars]

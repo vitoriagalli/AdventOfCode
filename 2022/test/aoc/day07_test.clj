@@ -1,5 +1,5 @@
-(ns aoc.day7-test
-  (:require [aoc.day7 :as day07]
+(ns aoc.day07-test
+  (:require [aoc.day07 :as day07]
             [clojure.test :refer :all]))
 
 (def input ["$ cd /"

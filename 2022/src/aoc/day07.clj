@@ -1,4 +1,4 @@
-(ns aoc.day7)
+(ns aoc.day07)
 
 (def list-cmd "$ ls")
 (def cd-out "$ cd ..")

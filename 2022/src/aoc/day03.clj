@@ -1,4 +1,4 @@
-(ns aoc.day3)
+(ns aoc.day03)
 
 (def n1parts 2)
 (def n2parts 3)

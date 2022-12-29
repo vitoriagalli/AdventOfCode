@@ -1,5 +1,5 @@
-(ns aoc.day9-test
-  (:require [aoc.day9 :as day09]
+(ns aoc.day09-test
+  (:require [aoc.day09 :as day09]
             [clojure.test :refer :all]))
 
 (def input ["R 4"

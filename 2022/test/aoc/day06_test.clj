@@ -1,5 +1,5 @@
-(ns aoc.day6-test
-  (:require [aoc.day6 :as day06]
+(ns aoc.day06-test
+  (:require [aoc.day06 :as day06]
             [clojure.test :refer :all]))
 
 (deftest part1

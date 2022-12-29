@@ -1,4 +1,4 @@
-(ns aoc.day4)
+(ns aoc.day04)
 
 (def regex #"(\d+)-(\d+),(\d+)-(\d+)")
 

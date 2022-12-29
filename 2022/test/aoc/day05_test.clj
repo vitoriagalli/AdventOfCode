@@ -1,5 +1,5 @@
-(ns aoc.day5-test
-  (:require [aoc.day5 :as day05]
+(ns aoc.day05-test
+  (:require [aoc.day05 :as day05]
             [clojure.test :refer :all]))
 
 (def input ["    [D]"
