@@ -71,8 +71,11 @@
    item]
   (let [worry-level (-> (operation (or op1 item) (or op2 item))
                         (/ 3)
-                        int)
-        to-monkey   (if (int? (/ worry-level divisible-by)) if-true if-false)]
+                        bigint)
+        to-monkey   (if (= (/ worry-level divisible-by)
+                           (quot worry-level divisible-by))
+                      if-true
+                      if-false)]
     (update-in monkeys-info [to-monkey :items] conj worry-level)))
 
 (defn round
@@ -85,8 +88,9 @@
                              (update-in [index :inspections] #(+ (count items) %)))]
     (reduce (partial round-on-monkey monkey) new-monkeys-info items)))
 
-(defn part01
-  [input]
+(defn solve-inspections
+  [n-rounds
+   input]
   (let [aggregated-input (->> input
                               (remove empty?)
                               (partition 6))
@@ -94,7 +98,7 @@
         rounds           (->> parsed-input
                               count
                               range
-                              (repeat 20)
+                              (repeat n-rounds)
                               flatten)
         final-round      (reduce round parsed-input rounds)]
     (->> final-round
@@ -103,12 +107,15 @@
          sort
          reverse
          (take 2)
-         (apply *))
-    ))
+         (apply *))))
+
+(defn part01
+  [input]
+  (solve-inspections 20 input))
 
 (defn part02
   [input]
-  1)
+  (solve-inspections 10000 input))
 
 (def solver
   {:day 11
