@@ -8,6 +8,10 @@
 (def true-regex #"If true: throw to monkey (\d+)")
 (def false-regex #"If false: throw to monkey (\d+)")
 
+(def levels
+  {:1 {:rounds 20 :divide-by-tree true}
+   :2 {:rounds 1000 :divide-by-tree false}})
+
 (defn parsed-monkey
   [monkey-line]
   (->> monkey-line
@@ -61,7 +65,8 @@
                      :inspections  0}})))
 
 (defn round-on-monkey
-  [{:keys [:operation
+  [divide-by-tree?
+   {:keys [:operation
            :op1
            :op2
            :divisible-by
@@ -69,9 +74,8 @@
            :if-false]}
    monkeys-info
    item]
-  (let [worry-level (-> (operation (or op1 item) (or op2 item))
-                        (/ 3)
-                        bigint)
+  (let [level       (bigint (operation (or op1 item) (or op2 item)))
+        worry-level (if divide-by-tree? (bigint (/ level 3)) level)
         to-monkey   (if (= (/ worry-level divisible-by)
                            (quot worry-level divisible-by))
                       if-true
@@ -79,17 +83,18 @@
     (update-in monkeys-info [to-monkey :items] conj worry-level)))
 
 (defn round
-  [monkeys-info
+  [level
+   monkeys-info
    index]
   (let [monkey           (get monkeys-info index)
         items            (:items monkey)
         new-monkeys-info (-> monkeys-info
                              (assoc-in [index :items] [])
                              (update-in [index :inspections] #(+ (count items) %)))]
-    (reduce (partial round-on-monkey monkey) new-monkeys-info items)))
+    (reduce (partial round-on-monkey (:divide-by-tree level) monkey) new-monkeys-info items)))
 
 (defn solve-inspections
-  [n-rounds
+  [level
    input]
   (let [aggregated-input (->> input
                               (remove empty?)
@@ -98,12 +103,13 @@
         rounds           (->> parsed-input
                               count
                               range
-                              (repeat n-rounds)
+                              (repeat (:rounds level))
                               flatten)
-        final-round      (reduce round parsed-input rounds)]
+        final-round      (reduce (partial round level) parsed-input rounds)]
     (->> final-round
          vals
          (map :inspections)
+         println
          sort
          reverse
          (take 2)
@@ -111,11 +117,11 @@
 
 (defn part01
   [input]
-  (solve-inspections 20 input))
+  (solve-inspections (:1 levels) input))
 
 (defn part02
   [input]
-  (solve-inspections 10000 input))
+  (solve-inspections (:2 levels) input))
 
 (def solver
   {:day 11
