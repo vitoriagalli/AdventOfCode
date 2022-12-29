@@ -25,7 +25,7 @@
            (* n-cycle (nth x-values (dec n-cycle))))
          (apply +))))
 
-(defn part2 [input]
+(defn solve-drawing [input]
   (let [circuit      (flatten [1 (mapcat parsed-input input)])
         x-values     (reductions + circuit)
         pixel-map    (map-indexed pixel x-values)
@@ -34,8 +34,8 @@
 
 (defn part02
   [input]
-  (let [sol (part2 input)]
-    (mapv println sol)
+  (let [solution (solve-drawing input)]
+    (mapv println solution)
     nil))
 
 (def solver
