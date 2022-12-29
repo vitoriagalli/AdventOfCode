@@ -1,5 +1,5 @@
 (ns aoc.day10-test
-  (:require [aoc.day10 :as day010]
+  (:require [aoc.day10 :as day10]
             [clojure.test :refer :all]))
 
 (def input ["addx 15"
@@ -153,9 +153,9 @@
 (deftest part1
   (testing "part01"
     (is (= 13140
-           (day010/part01 input)))))
+           (day10/part01 input)))))
 
 (deftest part2
   (testing "part02"
     (is (nil?
-         (day010/part02 input)))))
+         (day10/part02 input)))))
