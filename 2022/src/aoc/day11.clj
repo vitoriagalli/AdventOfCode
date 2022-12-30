@@ -14,8 +14,17 @@
      (reduce #(if (zero? %2) % (recur %2 (mod % %2))) xs)))
 
 (def levels
-  {:1 {:rounds 20 :manage-level (fn [level _] (bigint (/ level 3)))}
-   :2 {:rounds 10000 :manage-level (fn [level div-mod] (mod level div-mod))}})
+  {:1 {:rounds 20
+       :manage-level
+       (fn [level _]
+         (bigint (/ level 3)))}
+   :2 {:rounds 10000
+       :manage-level
+       (fn [level parsed-input]
+         (let [div-mod (->> parsed-input
+                            (mapv #(-> % val :divisible-by))
+                            (apply lcm))]
+           (mod level div-mod)))}})
 
 (defn parsed-monkey
   [monkey-line]
@@ -71,7 +80,6 @@
 
 (defn round-on-monkey
   [manage-level-fn
-   div-mod
    {:keys [:operation
            :op1
            :op2
@@ -80,8 +88,8 @@
            :if-false]}
    monkeys-info
    item]
-  (let [level       (bigint (operation (or op1 item) (or op2 item)))
-        worry-level (manage-level-fn level div-mod)
+  (let [level       (operation (or op1 item) (or op2 item))
+        worry-level (manage-level-fn level monkeys-info)
         to-monkey   (if (= (/ worry-level divisible-by)
                            (quot worry-level divisible-by))
                       if-true
@@ -90,7 +98,6 @@
 
 (defn round
   [level
-   div-mod
    monkeys-info
    index]
   (let [monkey           (get monkeys-info index)
@@ -98,7 +105,7 @@
         new-monkeys-info (-> monkeys-info
                              (assoc-in [index :items] [])
                              (update-in [index :inspections] #(+ (count items) %)))]
-    (reduce (partial round-on-monkey (:manage-level level) div-mod monkey) new-monkeys-info items)))
+    (reduce (partial round-on-monkey (:manage-level level) monkey) new-monkeys-info items)))
 
 (defn solve-inspections
   [level
@@ -112,10 +119,7 @@
                               range
                               (repeat (:rounds level))
                               flatten)
-        div-mod          (->> parsed-input
-                              (mapv #(-> % val :divisible-by))
-                              (apply lcm))
-        final-round      (reduce (partial round level div-mod) parsed-input rounds)]
+        final-round      (reduce (partial round level) parsed-input rounds)]
     (->> final-round
          vals
          (map :inspections)
