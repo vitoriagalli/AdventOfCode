@@ -10,21 +10,18 @@
 
 (defn lcm
   [& xs]
-  (/ (apply * xs)
-     (reduce #(if (zero? %2) % (recur %2 (mod % %2))) xs)))
+  (/ (apply * xs) (reduce #(if (zero? %2) % (recur %2 (mod % %2))) xs)))
 
 (def levels
-  {:1 {:rounds 20
-       :manage-level
-       (fn [level _]
-         (bigint (/ level 3)))}
-   :2 {:rounds 10000
-       :manage-level
-       (fn [level parsed-input]
-         (let [div-mod (->> parsed-input
-                            (mapv #(-> % val :divisible-by))
-                            (apply lcm))]
-           (mod level div-mod)))}})
+  {:1 {:rounds       20
+       :manage-level (fn [level _]
+                       (bigint (/ level 3)))}
+   :2 {:rounds       10000
+       :manage-level (fn [level parsed-input]
+                       (let [div-mod (->> parsed-input
+                                          (mapv #(-> % val :divisible-by))
+                                          (apply lcm))]
+                         (mod level div-mod)))}})
 
 (defn parsed-monkey
   [monkey-line]
@@ -62,20 +59,16 @@
     test-line
     true-line
     false-line]]
-  (let [monkey-n     (parsed-monkey (str/trim monkey-line))
-        items        (parsed-items (str/trim items-line))
-        [operation op1 op2] (parsed-operation (str/trim operation-line))
-        divisible-by (parsed-number (str/trim test-line) test-regex)
-        if-true      (parsed-number (str/trim true-line) true-regex)
-        if-false     (parsed-number (str/trim false-line) false-regex)]
+  (let [monkey-n (parsed-monkey (str/trim monkey-line))
+        [operation op1 op2] (parsed-operation (str/trim operation-line))]
     (conj monkey-map
-          {monkey-n {:items        items
+          {monkey-n {:items        (parsed-items (str/trim items-line))
                      :operation    operation
                      :op1          op1
                      :op2          op2
-                     :divisible-by divisible-by
-                     :if-true      if-true
-                     :if-false     if-false
+                     :divisible-by (parsed-number (str/trim test-line) test-regex)
+                     :if-true      (parsed-number (str/trim true-line) true-regex)
+                     :if-false     (parsed-number (str/trim false-line) false-regex)
                      :inspections  0}})))
 
 (defn round-on-monkey
