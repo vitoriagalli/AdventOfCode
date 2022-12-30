@@ -16,7 +16,7 @@ This repo contains my solutions to [Advent of Code, 2022](https://adventofcode.c
 |   [08 - Treetop Tree House](https://adventofcode.com/2022/day/8)    | :star: :star: | [:page_facing_up:](src/aoc/day08.clj) | [:white_check_mark:](test/aoc/day08_test.clj) |
 |       [09 - Rope Bridge](https://adventofcode.com/2022/day/9)       |    :star:     | [:page_facing_up:](src/aoc/day09.clj) | [:white_check_mark:](test/aoc/day09_test.clj) |
 |    [10 - Cathode-Ray Tube](https://adventofcode.com/2022/day/10)    | :star: :star: | [:page_facing_up:](src/aoc/day10.clj) | [:white_check_mark:](test/aoc/day10_test.clj) |
-|  [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)  |               | [:page_facing_up:](src/aoc/day11.clj) | [:white_check_mark:](test/aoc/day11_test.clj) |
+|  [11 - Monkey in the Middle](https://adventofcode.com/2022/day/11)  | :star: :star: | [:page_facing_up:](src/aoc/day11.clj) | [:white_check_mark:](test/aoc/day11_test.clj) |
 | [12 -Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) |               | [:page_facing_up:](src/aoc/day12.clj) | [:white_check_mark:](test/aoc/day12_test.clj) |
 |    [13 - Distress Signal](https://adventofcode.com/2022/day/13)     |               | [:page_facing_up:](src/aoc/day13.clj) | [:white_check_mark:](test/aoc/day13_test.clj) |
 |   [14 - Regolith Reservoir](https://adventofcode.com/2022/day/14)   |               | [:page_facing_up:](src/aoc/day14.clj) | [:white_check_mark:](test/aoc/day14_test.clj) |

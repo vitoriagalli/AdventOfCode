@@ -8,9 +8,14 @@
 (def true-regex #"If true: throw to monkey (\d+)")
 (def false-regex #"If false: throw to monkey (\d+)")
 
+(defn lcm
+  [& xs]
+  (/ (apply * xs)
+     (reduce #(if (zero? %2) % (recur %2 (mod % %2))) xs)))
+
 (def levels
-  {:1 {:rounds 20 :divide-by-tree true}
-   :2 {:rounds 1000 :divide-by-tree false}})
+  {:1 {:rounds 20 :manage-level (fn [level _] (bigint (/ level 3)))}
+   :2 {:rounds 10000 :manage-level (fn [level div-mod] (mod level div-mod))}})
 
 (defn parsed-monkey
   [monkey-line]
@@ -65,7 +70,8 @@
                      :inspections  0}})))
 
 (defn round-on-monkey
-  [divide-by-tree?
+  [manage-level-fn
+   div-mod
    {:keys [:operation
            :op1
            :op2
@@ -75,7 +81,7 @@
    monkeys-info
    item]
   (let [level       (bigint (operation (or op1 item) (or op2 item)))
-        worry-level (if divide-by-tree? (bigint (/ level 3)) level)
+        worry-level (manage-level-fn level div-mod)
         to-monkey   (if (= (/ worry-level divisible-by)
                            (quot worry-level divisible-by))
                       if-true
@@ -84,6 +90,7 @@
 
 (defn round
   [level
+   div-mod
    monkeys-info
    index]
   (let [monkey           (get monkeys-info index)
@@ -91,7 +98,7 @@
         new-monkeys-info (-> monkeys-info
                              (assoc-in [index :items] [])
                              (update-in [index :inspections] #(+ (count items) %)))]
-    (reduce (partial round-on-monkey (:divide-by-tree level) monkey) new-monkeys-info items)))
+    (reduce (partial round-on-monkey (:manage-level level) div-mod monkey) new-monkeys-info items)))
 
 (defn solve-inspections
   [level
@@ -105,11 +112,13 @@
                               range
                               (repeat (:rounds level))
                               flatten)
-        final-round      (reduce (partial round level) parsed-input rounds)]
+        div-mod          (->> parsed-input
+                              (mapv #(-> % val :divisible-by))
+                              (apply lcm))
+        final-round      (reduce (partial round level div-mod) parsed-input rounds)]
     (->> final-round
          vals
          (map :inspections)
-         println
          sort
          reverse
          (take 2)
