@@ -23,26 +23,11 @@
                                           (apply lcm))]
                          (mod level div-mod)))}})
 
-(defn parsed-monkey
-  [monkey-line]
-  (->> monkey-line
-       (re-matches n-monkey-regex)
-       second
-       Integer/parseInt))
-
 (defn parsed-items
   [items-line]
   (let [[_ items-str] (re-matches items-regex items-line)
         list (str/split items-str #", ")]
     (mapv #(Integer/parseInt %) list)))
-
-(defn parsed-operation
-  [operation-line]
-  (let [[_ op1-str operation-str op2-str] (re-matches operation-regex operation-line)
-        operation (load-string operation-str)
-        op1       (if (= "old" op1-str) nil (Integer/parseInt op1-str))
-        op2       (if (= "old" op2-str) nil (Integer/parseInt op2-str))]
-    [operation op1 op2]))
 
 (defn parsed-number
   [line regex]
@@ -59,13 +44,13 @@
     test-line
     true-line
     false-line]]
-  (let [monkey-n (parsed-monkey (str/trim monkey-line))
-        [operation op1 op2] (parsed-operation (str/trim operation-line))]
+  (let [monkey-n (parsed-number (str/trim monkey-line) n-monkey-regex)
+        [_ op1-str operation-str op2-str] (re-matches operation-regex (str/trim operation-line))]
     (conj monkey-map
           {monkey-n {:items        (parsed-items (str/trim items-line))
-                     :operation    operation
-                     :op1          op1
-                     :op2          op2
+                     :operation    (load-string operation-str)
+                     :op1          (if (= "old" op1-str) nil (Integer/parseInt op1-str))
+                     :op2          (if (= "old" op2-str) nil (Integer/parseInt op2-str))
                      :divisible-by (parsed-number (str/trim test-line) test-regex)
                      :if-true      (parsed-number (str/trim true-line) true-regex)
                      :if-false     (parsed-number (str/trim false-line) false-regex)
