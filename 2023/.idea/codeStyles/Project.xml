@@ -1,0 +1,58 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <ClojureCodeStyleSettings>
+      <option name="alignBindingForms" value="true" />
+      <option name="oneSpaceLists" value="true" />
+      <option name="nsImportsUse" value="VECTOR" />
+      <option name="indentCustomisations">
+        <map>
+          <entry key="abrams.logic.graph/defmutation" value="2" />
+          <entry key="acceptance-tests.aux.init/defflow" value="1" />
+          <entry key="clojure.test.check.clojure-test/defspec" value="-1" />
+          <entry key="clojure.test.check.properties/for-all" value="-1" />
+          <entry key="com.wsscode.pathom.connect/defresolver" value="1" />
+          <entry key="common-core.schema/loose-schema" value="2" />
+          <entry key="common-datomic.functions.constraint-fn" value="-1" />
+          <entry key="common-datomic.test-helpers/let-entities" value="-1" />
+          <entry key="common-http-client.components.mock-http/with-responses" value="-1" />
+          <entry key="common-io.interceptors.doc/defint" value="-1" />
+          <entry key="common-multi-service-tests.service/with-service" value="1" />
+          <entry key="common-test.http/as-customer" value="-1" />
+          <entry key="common-test.http/with-scopes" value="-1" />
+          <entry key="common-test.postman.core/as-of" value="-1" />
+          <entry key="common-test.postman.e2e/flow" value="-1" />
+          <entry key="common-test.postman.flow/flow" value="-1" />
+          <entry key="devcards.core/defcard" value="-1" />
+          <entry key="devcards.core/defcard-rg" value="-1" />
+          <entry key="devcards.core/deftest" value="-1" />
+          <entry key="io.pedestal.http.route.definition/defroutes" value="-1" />
+          <entry key="manifold.deferred/let-flow" value="-1" />
+          <entry key="mdr-multi-services-tests.aux.init/defflow" value="2" />
+          <entry key="midje.sweet/fact" value="-1" />
+          <entry key="midje.sweet/facts" value="-1" />
+          <entry key="midje.sweet/tabular" value="-1" />
+          <entry key="nubank.shuffle.common.ui.helpers/defc" value="1" />
+          <entry key="pedestal.swagger.core/defhandler" value="-1" />
+          <entry key="postman.aux.account/created-at" value="-1" />
+          <entry key="postman.aux.config/mdr-channel-list" value="1" />
+          <entry key="postman.aux.config/mdr-deny-list" value="1" />
+          <entry key="postman.aux.init/defflow" value="1" />
+          <entry key="schema.core/defmethod" value="-1" />
+          <entry key="schema.core/defschema" value="1" />
+          <entry key="schema.test/deftest" value="1" />
+          <entry key="shuffle.test-helpers/with-rendered-component" value="-1" />
+          <entry key="shuffle.test-helpers/with-subscriptions" value="-1" />
+        </map>
+      </option>
+    </ClojureCodeStyleSettings>
+    <JetCodeStyleSettings>
+      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+    </JetCodeStyleSettings>
+    <ScalaCodeStyleSettings>
+      <option name="MULTILINE_STRING_CLOSING_QUOTES_ON_NEW_LINE" value="true" />
+    </ScalaCodeStyleSettings>
+    <codeStyleSettings language="kotlin">
+      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+    </codeStyleSettings>
+  </code_scheme>
+</component>
