@@ -25,8 +25,3 @@
   (testing "part 2"
     (is (= 281 (day1/solve-part2 input-2)))
     (is (= 28 (day1/solve-part2 ["2fourseven1oneights"])))))
-
-; 54845
-
-
-
